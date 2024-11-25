@@ -4,13 +4,6 @@
 #define CARDGAME_H
 
 #endif //CARDGAME_H
-
-typedef
-struct Giocatore {
-	int numeroGiocatore;
-	int vite;
-} GIocatore;
-
 typedef enum  {
 	Fiori,
 	Cuori,
@@ -29,16 +22,8 @@ typedef enum {
 	Q,
 	K
 } Valori;
-
 typedef struct Carta {
 	Seme seme ;
 	Valori valori;
-} Carta;
-
-
-typedef
-struct Mazzo {
-	GIocatore giocatore;
-	Carta carta1, carta2;
-} Mazzo;
+} carta;
 

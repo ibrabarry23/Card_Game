@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include <CardGame.h>
 
 int main(void){
-    printf(" hello \n");
+    carta  carta1 = {Cuori, Asso};
+    PrintCarte(&carta1);
+
+    return 0;
     printf("aeweearf\n");
 }
