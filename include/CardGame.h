@@ -10,9 +10,20 @@ typedef enum  {
 	Picche,
 	Quadri
 } Seme;
-
+typedef enum {
+	Asso = 1,
+	DUE,
+	TRE,
+	QUATTRO,
+	CINQUE,
+	SEI,
+	SETTE,
+	J = 10,
+	Q,
+	K
+} Valori;
 typedef struct Carta {
 	Seme seme ;
-	int valore;
+	Valori valori;
 } carta;
 
