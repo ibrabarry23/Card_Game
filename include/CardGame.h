@@ -16,18 +16,16 @@ typedef enum  {
 	Quadri
 } Seme;
 typedef enum {
-	Asso = 1,
+	UNO,
 	DUE,
 	TRE,
 	QUATTRO,
 	CINQUE,
 	SEI,
 	SETTE,
-	OTTO,
-	NOVE,
-	J = 10,
-	Q,
-	K
+	J = 8,
+	Q = 9,
+	K = 10,
 } Valori;
 
 typedef struct Carta {
@@ -43,8 +41,8 @@ typedef struct Mazzo {
 void stampaMazzo(const Mazzo *mazzo);
 void stampaCarta(const Carta *carta);
 void inizializzaMazzo(Mazzo *mazzo) ;
-
-
+void shuffle(Mazzo * mazzo, size_t mazzo_size);
+void swap (Carta * a, Carta *b);
 
 
 
