@@ -7,6 +7,7 @@
 typedef struct Giocatore {
 	int numeroGiocatore;
 	int vite;
+    Giocatore mano[];
 } GIocatore;
 
 typedef enum  {
@@ -43,6 +44,7 @@ void stampaCarta(const Carta *carta);
 void inizializzaMazzo(Mazzo *mazzo) ;
 void shuffle(Mazzo * mazzo, size_t mazzo_size);
 void swap (Carta * a, Carta *b);
+void distribuisci(Giocatore *players,int n, Mazzo *mazzo){
 
 
 
