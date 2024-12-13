@@ -7,7 +7,8 @@
 typedef struct Giocatore {
 	int numeroGiocatore;
 	int vite;
-} GIocatore;
+	struct Giocatore *next;
+} Giocatore;
 
 typedef enum  {
 	Fiori,
@@ -38,6 +39,7 @@ typedef struct Mazzo {
 	Carta carte[40];
 	int num_carte;
 } Mazzo;
+
 void stampaMazzo(const Mazzo *mazzo);
 void stampaCarta(const Carta *carta);
 void inizializzaMazzo(Mazzo *mazzo) ;
