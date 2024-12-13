@@ -43,3 +43,16 @@ void shuffle(Mazzo * mazzo, size_t mazzo_size) {
     }
 
 }
+void distribuisci(Giocatore *players,int n, Mazzo *mazzo){
+    if(mazzo->num_carte <n*2)
+        printf(" Non ci sono abbastanza giocatori");
+    int count=0;
+    for(int i =0; i<n ; i++){
+        if(players[i].vite>0){
+            players[i].mano[0] = mazzo->carte[count++]; // Assegna carta coperta
+            players[i].mano[1] = mazzo->carte[count++]; // Assegna carta scoperta
+        }
+    mazzo->num_carte -= count;
+    }
+
+}
