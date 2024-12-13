@@ -43,14 +43,14 @@ void shuffle(Mazzo * mazzo, size_t mazzo_size) {
     }
 }
 
-void giocatori (Giocatore **head, int num) {
+void giocatori ( Giocatore **head, int num) {
 
     if (num < 2 || num > 20) exit(EXIT_FAILURE);
 
-    Giocatore *giocatore_precedente = NULL;
+     Giocatore *giocatore_precedente = NULL;
 
     for (int i = 1; i <= num; i++) {
-        Giocatore *giocatore = (Giocatore *)malloc(sizeof(Giocatore));
+        struct Giocatore *giocatore = (Giocatore *)malloc(sizeof(Giocatore));
 
         if (giocatore == NULL) exit(EXIT_FAILURE);
 
@@ -67,7 +67,7 @@ void giocatori (Giocatore **head, int num) {
     }
 
 }
-void distribuisci(Giocatore *players,int n, Mazzo *mazzo){
+void distribuisci( Giocatore *players,int n, Mazzo *mazzo){
     if(mazzo->num_carte <n*2)
         printf(" Non ci sono abbastanza giocatori");
     int count=0;

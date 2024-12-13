@@ -4,11 +4,6 @@
 #define CARDGAME_H
 
 
-typedef struct Giocatore {
-	int numeroGiocatore;
-	int vite;
-    Giocatore mano[];
-} GIocatore;
 
 typedef enum  {
 	Fiori,
@@ -39,12 +34,22 @@ typedef struct Mazzo {
 	Carta carte[40];
 	int num_carte;
 } Mazzo;
+
+typedef struct Giocatore {
+	int numeroGiocatore;
+	int vite;
+    Carta mano[2];
+    struct Giocatore *next;
+} Giocatore;
+
+
+
 void stampaMazzo(const Mazzo *mazzo);
 void stampaCarta(const Carta *carta);
 void inizializzaMazzo(Mazzo *mazzo) ;
 void shuffle(Mazzo * mazzo, size_t mazzo_size);
 void swap (Carta * a, Carta *b);
-void distribuisci(Giocatore *players,int n, Mazzo *mazzo){
+void distribuisci(Giocatore *players,int n, Mazzo *mazzo);
 
 
 
