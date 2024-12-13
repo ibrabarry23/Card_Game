@@ -38,8 +38,32 @@ void swap (Carta * a , Carta *b) {
 }
 void shuffle(Mazzo * mazzo, size_t mazzo_size) {
     for(size_t i = mazzo_size-1; i > 0 ;i--) {
-       int  j = rand()% (i+1);
+        int  j = rand()% (i+1);
         swap(&mazzo->carte[i],&mazzo->carte[j]);
+    }
+}
+
+void giocatori (Giocatore **head, int num) {
+
+    if (num < 2 || num > 20) exit(EXIT_FAILURE);
+
+    Giocatore *giocatore_precedente = NULL;
+
+    for (int i = 1; i <= num; i++) {
+        Giocatore *giocatore = (Giocatore *)malloc(sizeof(Giocatore));
+
+        if (giocatore == NULL) exit(EXIT_FAILURE);
+
+        giocatore->numeroGiocatore = i;
+        giocatore->vite = 2;
+        giocatore->next = NULL;
+
+        if(*head == NULL) {
+            *head = giocatore;
+        } else {
+            giocatore_precedente->next = giocatore;
+        }
+        giocatore_precedente = giocatore;
     }
 
 }
