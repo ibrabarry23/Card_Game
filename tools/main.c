@@ -4,41 +4,61 @@
 #include "CardGame.h"
 
 int main(void) {
-    // Inizializzazione
+    printf("=== Inizio del Gioco ===\n\n");
+
+    // Inizializzazione del mazzo
     Mazzo mazzo;
     inizializzaMazzo(&mazzo);
+    printf("Mazzo inizializzato.\n");
 
-    printf("Mazzo inizializzato:\n");
-    stampaMazzo(&mazzo);
+    // Stampa il mazzo inizializzato
+    printf("\nCarte nel mazzo prima del mescolamento:\n");
+    for (int i = 0; i < mazzo.num_carte; i++) {
+        printf("Carta %d: Valore=%d, Seme=%d\n", i, mazzo.carte[i].valore, mazzo.carte[i].seme);
+    }
 
-    // Mescolamento del mazzo
-    srand(time(NULL)); // Imposta il seme per la generazione casuale
+    // Mescolare il mazzo
+    srand(time(NULL));
     shuffle(&mazzo, mazzo.num_carte);
+    printf("\nMazzo mescolato.\n");
 
-    printf("\nMazzo mescolato:\n");
-    stampaMazzo(&mazzo);
+    // Stampa il mazzo dopo il mescolamento
+    printf("\nCarte nel mazzo dopo il mescolamento:\n");
+    for (int i = 0; i < mazzo.num_carte; i++) {
+        printf("Carta %d: Valore=%d, Seme=%d\n", i, mazzo.carte[i].valore, mazzo.carte[i].seme);
+    }
 
     // Creazione dei giocatori
-    int num_giocatori = 4; // Cambia il numero di giocatori come desiderato
-    Giocatore giocatori[num_giocatori];
-    for (int i = 0; i < num_giocatori; i++) {
-        giocatori[i].numeroGiocatore = i + 1;
-        giocatori[i].vite = 2; // Ogni giocatore parte con 2 vite
-    }
+    int num_giocatori = 6;
+    Giocatore *head = NULL;
+    giocatori(&head, num_giocatori);
+    printf("\nGiocatori creati:\n");
+   // stampaGiocatori(head);
 
     // Distribuzione delle carte
-    printf("\nDistribuzione delle carte ai giocatori:\n");
-    distribuisci(giocatori, num_giocatori, &mazzo);
+    printf("\nDistribuzione delle carte ai giocatori...\n");
+    distribuisci(head, num_giocatori, &mazzo);
 
-    for (int i = 0; i < num_giocatori; i++) {
-        printf("Giocatore %d:\n", giocatori[i].numeroGiocatore);
-        printf("Carta coperta: ");
-        stampaCarta(&giocatori[i].mano[0]);
-        printf("Carta scoperta: ");
-        stampaCarta(&giocatori[i].mano[1]);
-        printf("Vite: %d\n", giocatori[i].vite);
+    // Stampa le carte dei giocatori
+    Giocatore *current = head;
+    while (current != NULL) {
+        printf("\nGiocatore %d ha ricevuto le seguenti carte:\n", current->numeroGiocatore);
+        for (int i = 0; i < 2; i++) {
+            printf("Carta %d: Valore=%d, Seme=%d\n", i + 1, current->mano[i].valore, current->mano[i].seme);
+        }
+        current = current->next;
     }
 
+    // Mostra il numero di carte rimanenti nel mazzo
     printf("\nCarte rimanenti nel mazzo: %d\n", mazzo.num_carte);
+
+    // Pulizia della memoria
+    while (head != NULL) {
+        Giocatore *temp = head;
+        head = head->next;
+        free(temp);
+    }
+
+    printf("\n=== Fine del Gioco ===\n");
     return 0;
 }

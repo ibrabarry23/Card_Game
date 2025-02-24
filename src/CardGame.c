@@ -6,7 +6,7 @@
 void inizializzaMazzo(Mazzo *mazzo) {
     int index = 0;
     for (int seme = Fiori; seme <= Quadri; seme++) {
-        for (int valore = UNO; valore <K; valore++) {
+        for (int valore = UNO; valore <=K; valore++) {
             mazzo->carte[index].seme = seme;
             mazzo->carte[index].valore = valore;
             index++;
@@ -18,8 +18,8 @@ void stampaCarta(const Carta *carta) {
     const char *semi[] = {"Fiori", "Cuori", "Picche", "Quadri"};
     const char *valori[] = { "1", "2", "3", "4", "5", "6", "7","J", "Q", "K"};
 
-    if (carta->valore >= UNO && carta->valore <= K) {
-        printf("%s di %s\n", valori[carta->valore], semi[carta->seme]);
+    if (carta->valore >= UNO && carta->valore <= K && carta->seme >= Fiori && carta->seme <= Quadri) {
+        printf("%s di %s\n", valori[carta->valore-1], semi[carta->seme]);
     } else {
         printf("Carta non valida\n");
     }
@@ -68,15 +68,19 @@ void giocatori ( Giocatore **head, int num) {
 
 }
 void distribuisci( Giocatore *players,int n, Mazzo *mazzo){
-    if(mazzo->num_carte <n*2)
-        printf(" Non ci sono abbastanza giocatori");
-    int count=0;
+    if(mazzo->num_carte <n*2){
+        fprintf(stderr, "Errore: Non ci sono abbastanza carte nel mazzo per distribuire a %d giocatori.\n", n);
+        exit(EXIT_FAILURE);
+    }
+
+    int count=
+        0;
     for(int i =0; i<n ; i++){
         if(players[i].vite>0){
             players[i].mano[0] = mazzo->carte[count++]; // Assegna carta coperta
             players[i].mano[1] = mazzo->carte[count++]; // Assegna carta scoperta
         }
-    mazzo->num_carte -= count;
     }
+    mazzo->num_carte -= (n*2);
 
 }
