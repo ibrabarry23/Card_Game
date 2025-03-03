@@ -47,11 +47,11 @@ void shuffle(Mazzo * mazzo, size_t mazzo_size) {
 Giocatore * startPlayer(Giocatore* player, int n_player) {
     int  j = rand()% n_player;
 
-    for (int i = 0; i < j; i++) {
-        player = player->next;  // Avanza nella lista fino al giocatore scelto
-    }
+    // ciclo per avanzare fino al giocatore scelto casualmente
+    for (int i = 0; i < j; i++)
+        player = player->next;
 
-    return player;  // Restituisce il puntatore al giocatore scelto
+    return player;
 }
 
 void giocatori ( Giocatore **head, int num) {
@@ -61,7 +61,7 @@ void giocatori ( Giocatore **head, int num) {
      Giocatore *giocatore_precedente = NULL;
 
     for (int i = 1; i <= num; i++) {
-        struct Giocatore *giocatore = (Giocatore *)malloc(sizeof(Giocatore));
+        Giocatore *giocatore = (Giocatore *)malloc(sizeof(Giocatore));
 
         if (giocatore == NULL) exit(EXIT_FAILURE);
 
@@ -76,8 +76,8 @@ void giocatori ( Giocatore **head, int num) {
         }
         giocatore_precedente = giocatore;
     }
-
 }
+
 void distribuisci( Giocatore *players, int n, Mazzo *mazzo){
     if(mazzo->num_carte <= n*2) {
         printf(" Non ci sono abbastanza giocatori");

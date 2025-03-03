@@ -30,10 +30,17 @@ int main(void) {
     }
 
     // Creazione dei giocatori
-    int num_giocatori = 6;
+    int num_giocatori;
+
+    printf("\nInserisci il numero di giocatori che desideri: ");
+    scanf("%d", &num_giocatori);
+    if (num_giocatori < 2 || num_giocatori > 20) {
+        exit(EXIT_FAILURE);
+    }
+
     Giocatore *head = NULL;
     giocatori(&head, num_giocatori);
-    printf("\nGiocatori creati:\n");
+    printf("\nGiocatori creati: %d\n", num_giocatori);
    // stampaGiocatori(head);
 
     // Distribuzione delle carte
@@ -54,7 +61,7 @@ int main(void) {
     printf("\nCarte rimanenti nel mazzo: %d\n", mazzo.num_carte);
 
     Giocatore* primo_giocatore = startPlayer(head, num_giocatori);
-    printf("\nIl primo giocatore è: %d", primo_giocatore->numeroGiocatore);
+    printf("\nIl primo giocatore è: %d\n", primo_giocatore->numeroGiocatore);
 
     // Pulizia della memoria
     while (head != NULL) {
