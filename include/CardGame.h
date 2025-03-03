@@ -49,3 +49,4 @@ void distribuisci(Giocatore *players,int n, Mazzo *mazzo);
 void effetti(Giocatore * giocatore, Giocatore *head);
 
 #endif //CARDGAME_H
+
