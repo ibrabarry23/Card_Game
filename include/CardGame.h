@@ -1,9 +1,5 @@
-
-
 #ifndef CARDGAME_H
 #define CARDGAME_H
-
-
 
 typedef enum  {
 	Fiori = 0,
@@ -11,6 +7,7 @@ typedef enum  {
 	Picche = 2,
 	Quadri = 3,
 } Seme;
+
 typedef enum {
 	UNO = 1,
 	DUE=2,
@@ -38,11 +35,9 @@ typedef struct Mazzo {
 typedef struct Giocatore {
 	int numeroGiocatore;
 	int vite;
-    Carta mano[2];
-    struct Giocatore *next;
+	Carta mano[2];
+	struct Giocatore *next;
 } Giocatore;
-
-
 
 void stampaMazzo(const Mazzo *mazzo);
 void stampaCarta(const Carta *carta);
