@@ -47,6 +47,7 @@ void swap (Carta * a, Carta *b);
 void giocatori ( Giocatore **head, int num);
 void distribuisci(Giocatore *players,int n, Mazzo *mazzo);
 void effetti(Giocatore * giocatore, Giocatore *head);
+Giocatore* startPlayer(Giocatore* player, int n_player);
 
 #endif //CARDGAME_H
 

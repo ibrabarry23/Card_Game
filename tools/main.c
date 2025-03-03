@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "CardGame.h"
+#include "../include/CardGame.h"
 
 int main(void) {
     printf("=== Inizio del Gioco ===\n\n");
@@ -51,6 +52,9 @@ int main(void) {
 
     // Mostra il numero di carte rimanenti nel mazzo
     printf("\nCarte rimanenti nel mazzo: %d\n", mazzo.num_carte);
+
+    Giocatore* primo_giocatore = startPlayer(head, num_giocatori);
+    printf("\nIl primo giocatore è: %d", primo_giocatore->numeroGiocatore);
 
     // Pulizia della memoria
     while (head != NULL) {

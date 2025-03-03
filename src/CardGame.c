@@ -44,6 +44,16 @@ void shuffle(Mazzo * mazzo, size_t mazzo_size) {
     }
 }
 
+Giocatore * startPlayer(Giocatore* player, int n_player) {
+    int  j = rand()% n_player;
+
+    for (int i = 0; i < j; i++) {
+        player = player->next;  // Avanza nella lista fino al giocatore scelto
+    }
+
+    return player;  // Restituisce il puntatore al giocatore scelto
+}
+
 void giocatori ( Giocatore **head, int num) {
 
     if (num < 2 || num > 20) exit(EXIT_FAILURE);
