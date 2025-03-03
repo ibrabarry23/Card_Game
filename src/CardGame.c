@@ -74,15 +74,14 @@ void distribuisci( Giocatore *players, int n, Mazzo *mazzo){
         return;
     }
 
-    Giocatore *current = players;
     int count = 0;
 
-    while (current != NULL && count < n * 2) {
-        if (current->vite > 0) {
-            current->mano[0] = mazzo->carte[count++]; // Carta coperta
-            current->mano[1] = mazzo->carte[count++]; // Carta scoperta
+    while (players != NULL && count < n * 2) {
+        if (players->vite > 0) {
+            players->mano[0] = mazzo->carte[count++]; // Carta coperta
+            players->mano[1] = mazzo->carte[count++]; // Carta scoperta
         }
-        current = current->next;
+        players = players->next;
     }
 
     mazzo->num_carte -= count;
