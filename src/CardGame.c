@@ -84,3 +84,65 @@ void distribuisci( Giocatore *players,int n, Mazzo *mazzo){
     mazzo->num_carte -= (n*2);
 
 }
+int campoVita=0;
+void effetti(Giocatore *giocatore, Giocatore *head) {
+    if (!giocatore) return;
+
+    Carta carta = giocatore->mano[1];
+
+    switch (carta.valore) {
+        case DUE: case TRE: case QUATTRO: case CINQUE: case SEI:
+            printf("Giocatore %d: Nessun effetto per la carta %d.\n", giocatore->numeroGiocatore, carta.valore);
+            break;
+
+        case SETTE: {
+            Giocatore *next = giocatore->next ? giocatore->next : head;
+            printf("Giocatore %d forza il Giocatore %d a scoprire la sua carta.\n", giocatore->numeroGiocatore, next->numeroGiocatore);
+            effetti(next, head);
+            break; 
+        }
+
+        case J: {
+            Giocatore *previous = head;
+            if (giocatore != head) {
+                while (previous->next != giocatore && previous->next != NULL) {
+                    previous = previous->next;
+                }
+            }
+            printf("Giocatore %d dà 1 punto vita al Giocatore %d.\n", giocatore->numeroGiocatore, previous->numeroGiocatore);
+            if (giocatore->vite > 0) {
+                giocatore->vite--;
+                previous->vite++;
+            }
+            break;
+        }
+
+        case Q: {
+            Giocatore *target = (giocatore->next && giocatore->next->next) ? giocatore->next->next : head;
+            printf("Giocatore %d dà 1 punto vita al Giocatore %d.\n", giocatore->numeroGiocatore, target->numeroGiocatore);
+            if (giocatore->vite > 0) {
+                giocatore->vite--;
+                target->vite++;
+            }
+            break;
+        }
+
+        case UNO:
+            printf("Giocatore %d perde 1 punto vita.\n", giocatore->numeroGiocatore);
+            if (giocatore->vite > 0) {
+                giocatore->vite--;
+                campoVita++;
+            }
+            break;
+
+        case K:
+            printf("Giocatore %d raccoglie %d punti vita dal campo.\n", giocatore->numeroGiocatore, campoVita);
+            giocatore->vite += campoVita;
+            campoVita = 0;
+            break;
+
+        default:
+            printf("Giocatore %d ha giocato una carta senza effetto speciale.\n", giocatore->numeroGiocatore);
+            break;
+    }
+}
