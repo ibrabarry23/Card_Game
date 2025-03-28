@@ -34,9 +34,13 @@ int main(void) {
 
     printf("\nInserisci il numero di giocatori che desideri: ");
     scanf("%d", &num_giocatori);
-    if (num_giocatori < 2 || num_giocatori > 20) {
-        exit(EXIT_FAILURE);
+    while(num_giocatori < 2 || num_giocatori > 20){
+        printf("Errore! Inserisci il numero di giocatori compresto tra 2 e 20: ");
+        scanf("%d", &num_giocatori);
     }
+   
+
+    
 
     Giocatore *head = NULL;
     giocatori(&head, num_giocatori);
