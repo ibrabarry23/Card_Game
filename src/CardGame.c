@@ -2,6 +2,8 @@
 #include <CardGame.h>
 #include <stdlib.h>
 #include <time.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 void inizializzaMazzo(Mazzo *mazzo) {
     int index = 0;
@@ -158,4 +160,12 @@ void effetti(Giocatore *giocatore, Giocatore *head) {
             printf("Giocatore %d ha giocato una carta senza effetto speciale.\n", giocatore->numeroGiocatore);
             break;
     }
+}
+
+
+
+
+
+SDL_Texture* Carte(SDL_Render * r, const Carta *carta){
+    
 }

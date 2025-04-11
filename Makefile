@@ -1,6 +1,8 @@
 # Variabili
 CC = gcc
 CFLAGS = -std=c99 -pedantic -O2 -Wall -Iinclude
+SDL_CFLAGS := $(shell sdl2-config --cflags)
+SDL_LDFLAGS := $(shell sdl2-config --libs)
 SRC_DIR = src
 BUILD_DIR = build
 INCLUDE_DIR = include
@@ -15,16 +17,17 @@ all: $(TARGET)
 # Regola per creare l'eseguibile
 $(TARGET): $(OBJECTS)
 	@mkdir -p $(BUILD_DIR)
-	$(CC) $(OBJECTS) -o $@
+	$(CC) $(OBJECTS) -o $@ $(SDL_LDFLAGS)
 
-# Regola per creare i file oggetto
+# Regola per creare i file oggetto da src/
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(SDL_CFLAGS) -c $< -o $@
 
+# Regola per creare il file oggetto da tools/main.c
 $(BUILD_DIR)/main.o: $(TOOLS_DIR)/main.c
 	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(SDL_CFLAGS) -c $< -o $@
 
 # Pulizia
 clean:
