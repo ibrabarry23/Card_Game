@@ -1,6 +1,7 @@
 #ifndef CARDGAME_H
 #define CARDGAME_H
-
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 typedef enum  {
 	Fiori = 0,
 	Cuori = 1,

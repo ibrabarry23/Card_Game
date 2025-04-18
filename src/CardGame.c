@@ -2,8 +2,8 @@
 #include <CardGame.h>
 #include <stdlib.h>
 #include <time.h>
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 void inizializzaMazzo(Mazzo *mazzo) {
     int index = 0;
@@ -84,6 +84,7 @@ void distribuisci( Giocatore *players, int n, Mazzo *mazzo){
     if(mazzo->num_carte <= n*2) {
         printf(" Non ci sono abbastanza giocatori");
         return;
+        
     }
 
     int count = 0;
@@ -166,6 +167,41 @@ void effetti(Giocatore *giocatore, Giocatore *head) {
 
 
 
-SDL_Texture* Carte(SDL_Render * r, const Carta *carta){
-    
+SDL_Texture* Carte(SDL_Render *r, const Carta *carta) {
+    if (!r || !carta) return NULL;
+
+    const char* semi_cartelle[] = {"fiori", "cuori", "picche", "quadri"};
+    const char* nomi_valori[] = {
+        "01_Asso", "02_Due", "03_Tre", "04_Quattro", "05_Cinque",
+        "06_Sei", "07_Sette", "11_J", "25_Q", "13_K"  // mappatura personalizzata
+    };
+
+    char path[128];
+
+    // Sicurezza: controlla se i valori sono nel range giusto
+    if (carta->valore < UNO || carta->valore > K || carta->seme < Fiori || carta->seme > Quadri) {
+        fprintf(stderr, "Carta non valida\n");
+        return NULL;
+    }
+
+    // Mappatura diretta del valore al nome file
+    snprintf(path, sizeof(path), "%s/%s_di_%s.jpg", 
+             semi_cartelle[carta->seme], 
+             nomi_valori[carta->valore - 1], 
+             semi_cartelle[carta->seme]);
+
+    SDL_Surface* surface = IMG_Load(path);
+    if (!surface) {
+        fprintf(stderr, "Errore nel caricamento dell'immagine %s: %s\n", path, IMG_GetError());
+        return NULL;
+    }
+
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(r, surface);
+    SDL_FreeSurface(surface);
+
+    if (!texture) {
+        fprintf(stderr, "Errore nella creazione della texture: %s\n", SDL_GetError());
+    }
+
+    return texture;
 }

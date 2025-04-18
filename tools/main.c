@@ -1,80 +1,113 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "CardGame.h"
-#include "../include/CardGame.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include "CardGame.h"  // Contiene tutte le tue struct e funzioni
+
+int campoVita = 0;
 
 int main(void) {
     printf("=== Inizio del Gioco ===\n\n");
 
-    // Inizializzazione del mazzo
+    // Inizializzazione mazzo
     Mazzo mazzo;
     inizializzaMazzo(&mazzo);
-    printf("Mazzo inizializzato.\n");
-
-    // Stampa il mazzo inizializzato
-    printf("\nCarte nel mazzo prima del mescolamento:\n");
-    for (int i = 0; i < mazzo.num_carte; i++) {
-        printf("Carta %d: Valore=%d, Seme=%d\n", i, mazzo.carte[i].valore, mazzo.carte[i].seme);
-    }
-
-    // Mescolare il mazzo
     srand(time(NULL));
     shuffle(&mazzo, mazzo.num_carte);
-    printf("\nMazzo mescolato.\n");
 
-    // Stampa il mazzo dopo il mescolamento
-    printf("\nCarte nel mazzo dopo il mescolamento:\n");
-    for (int i = 0; i < mazzo.num_carte; i++) {
-        printf("Carta %d: Valore=%d, Seme=%d\n", i, mazzo.carte[i].valore, mazzo.carte[i].seme);
-    }
-
-    // Creazione dei giocatori
+    // Input giocatori
     int num_giocatori;
-
-    printf("\nInserisci il numero di giocatori che desideri: ");
+    printf("Inserisci il numero di giocatori (2-20): ");
     scanf("%d", &num_giocatori);
-    while(num_giocatori < 2 || num_giocatori > 20){
-        printf("Errore! Inserisci il numero di giocatori compreso tra 2 e 20: ");
+    while (num_giocatori < 2 || num_giocatori > 20) {
+        printf("Numero non valido. Riprova: ");
         scanf("%d", &num_giocatori);
     }
-   
 
-    
-
-    Giocatore *head = NULL;
+    // Creazione giocatori
+    Giocatore* head = NULL;
     giocatori(&head, num_giocatori);
-    printf("\nGiocatori creati: %d\n", num_giocatori);
-   // stampaGiocatori(head);
-
-    // Distribuzione delle carte
-    printf("\nDistribuzione delle carte ai giocatori...\n");
     distribuisci(head, num_giocatori, &mazzo);
 
-    // Stampa le carte dei giocatori
-    Giocatore *current = head;
-    while (current != NULL) {
-        printf("\nGiocatore %d ha ricevuto le seguenti carte:\n", current->numeroGiocatore);
-        for (int i = 0; i < 2; i++) {
-            printf("Carta %d: Valore=%d, Seme=%d\n", i + 1, current->mano[i].valore, current->mano[i].seme);
-        }
-        current = current->next;
+    // Primo giocatore casuale
+    Giocatore* primo = startPlayer(head, num_giocatori);
+    printf("Primo giocatore selezionato: Giocatore %d\n", primo->numeroGiocatore);
+
+    // Inizializzazione SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        fprintf(stderr, "SDL Init Error: %s\n", SDL_GetError());
+        return 1;
     }
 
-    // Mostra il numero di carte rimanenti nel mazzo
-    printf("\nCarte rimanenti nel mazzo: %d\n", mazzo.num_carte);
+    if (!(IMG_Init(IMG_INIT_JPG) & IMG_INIT_JPG)) {
+        fprintf(stderr, "IMG_Init Error: %s\n", IMG_GetError());
+        SDL_Quit();
+        return 1;
+    }
 
-    Giocatore* primo_giocatore = startPlayer(head, num_giocatori);
-    printf("\nIl primo giocatore è: %d\n", primo_giocatore->numeroGiocatore);
+    SDL_Window* win = SDL_CreateWindow("Carte del Giocatore", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+    if (!win) {
+        fprintf(stderr, "Errore creazione finestra: %s\n", SDL_GetError());
+        IMG_Quit();
+        SDL_Quit();
+        return 1;
+    }
 
-    // Pulizia della memoria
-    while (head != NULL) {
-        Giocatore *temp = head;
+    SDL_Renderer* ren = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
+    if (!ren) {
+        fprintf(stderr, "Errore creazione renderer: %s\n", SDL_GetError());
+        SDL_DestroyWindow(win);
+        IMG_Quit();
+        SDL_Quit();
+        return 1;
+    }
+
+    // Carica le due texture delle carte del primo giocatore
+    SDL_Texture* carta1 = Carte(ren, &primo->mano[0]); // Carta coperta
+    SDL_Texture* carta2 = Carte(ren, &primo->mano[1]); // Carta scoperta
+
+    if (!carta1 || !carta2) {
+        fprintf(stderr, "Errore nel caricamento di una o più carte.\n");
+    } else {
+        int running = 1;
+        SDL_Event e;
+
+        while (running) {
+            while (SDL_PollEvent(&e)) {
+                if (e.type == SDL_QUIT) {
+                    running = 0;
+                }
+            }
+
+            SDL_SetRenderDrawColor(ren, 0, 120, 0, 255); // Verde tavolo
+            SDL_RenderClear(ren);
+
+            SDL_Rect rect1 = { 200, 150, 150, 220 };
+            SDL_Rect rect2 = { 450, 150, 150, 220 };
+
+            SDL_RenderCopy(ren, carta1, NULL, &rect1);
+            SDL_RenderCopy(ren, carta2, NULL, &rect2);
+
+            SDL_RenderPresent(ren);
+        }
+    }
+
+    // Pulizia
+    if (carta1) SDL_DestroyTexture(carta1);
+    if (carta2) SDL_DestroyTexture(carta2);
+    SDL_DestroyRenderer(ren);
+    SDL_DestroyWindow(win);
+    IMG_Quit();
+    SDL_Quit();
+
+    // Dealloca memoria giocatori
+    while (head) {
+        Giocatore* tmp = head;
         head = head->next;
-        free(temp);
+        free(tmp);
     }
 
     printf("\n=== Fine del Gioco ===\n");
     return 0;
-
 }
