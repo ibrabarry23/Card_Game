@@ -1,0 +1,52 @@
+---
+title: "Card Game"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Introduction
+Welcome to the Card Game project! In this project, you will create a simple card game using R and R Markdown. The game will involve drawing cards from a deck and comparing their values.
+## Getting Started
+1. Create a new R Markdown document in RStudio.
+2. Name the document "Card_Game.Rmd".
+3. Set the output format to HTML.
+4. Write your code and explanations in the R Markdown document.
+5. Knit the document to generate an HTML report.
+## Project Instructions
+1. Create a deck of cards with values ranging from 1 to 10.
+2. Shuffle the deck of cards.
+3. Draw two cards from the shuffled deck.
+4. Compare the values of the drawn cards.
+5. Determine the winner based on the comparison.
+6. Display the winner in the R Markdown document.
+$$
+\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}
+$$
+
+# Create and shuffle deck of cards
+deck <- sample(1:10, replace = FALSE)  # Create deck with numbers 1-10 and shuffle without replacement
+```{r error= TRUE}
+deck <- sample(1:10)
+
+# Draw cards
+card1 <- deck[1]
+card2 <- deck[2]
+
+# Compare and determine winner
+result <- if(card1 > card2) {
+  "Player 1 wins!"
+} else if(card2 > card1) {
+  "Player 2 wins!"
+} else {
+  "Tie!
+}
+
+# Print results
+print(paste("Card 1:", card1))
+print(paste("Card 2:", card2))
+print(result)
+```
