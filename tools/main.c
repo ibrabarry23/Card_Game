@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
-// #include <SDL2/SDL.h>
-// #include <SDL2/SDL_image.h>
+#include <stdbool.h>
+
 #include "CardGame.h"  // Contiene tutte le tue struct e funzioni
 
 extern int campoVita ;
 
 int main(void) {
     printf("=== Inizio del Gioco ===\n\n");
-
+//creazione mazzo
     Mazzo mazzo;
     inizializzaMazzo(&mazzo);
     srand(time(NULL));
+//mescola mazzo
     shuffle(&mazzo, mazzo.num_carte);
-
+//Selezione numero giocatori
     int num_giocatori;
     printf("Inserisci il numero di giocatori (2-20): ");
     scanf("%d", &num_giocatori);
@@ -27,7 +27,7 @@ int main(void) {
     Giocatore* head = NULL;
     giocatori(&head, num_giocatori);
 
-    giocaPartita(&head, &mazzo, num_giocatori); 
+    giocaPartita(&head, &mazzo); 
     // Deallocazione
     while (head) {
         Giocatore* tmp = head;

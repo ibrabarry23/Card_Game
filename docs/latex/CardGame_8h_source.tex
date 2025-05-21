@@ -1,0 +1,58 @@
+\doxysection{Card\+Game.\+h}
+\hypertarget{CardGame_8h_source}{}\label{CardGame_8h_source}\index{include/CardGame.h@{include/CardGame.h}}
+\mbox{\hyperlink{CardGame_8h}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CARDGAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CARDGAME\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \#include\ <SDL2/SDL.h>\ \ \ \ \ \ \ \ \ //\ Se\ ti\ servono}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \#include\ <SDL2/SDL\_image.h>\ \ \ //\ Se\ ti\ servono}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_a67b301b2eac68be01503399ca1e1aa09ad36b7de10ed5d3d60c20ed595070fceb}{Fiori}}\ =\ 0,}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_a67b301b2eac68be01503399ca1e1aa09af9ad4c1c651d77de0dcaf1936c24973d}{Cuori}}\ =\ 1,}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_a67b301b2eac68be01503399ca1e1aa09a88d218f2d8e34c188a53c826a56cc17a}{Picche}}\ =\ 2,}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_a67b301b2eac68be01503399ca1e1aa09a7aa9dae02aba636f1b38cd18699c98ac}{Quadri}}\ =\ 3,}
+\DoxyCodeLine{00012\ \}\ \mbox{\hyperlink{CardGame_8h_a67b301b2eac68be01503399ca1e1aa09}{Seme}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90a1be7a23d5c358c3943f9a8f249507fb0}{ASSO}}\ =\ 1,}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90aae82d6ec97e5e06b79b6f0014329bec4}{DUE}}=2,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90a8a740aab51bff64f17abec9154bb7bbb}{TRE}}=3,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90ad99dbc33e9a221e1ea5bbc01ff995d3c}{QUATTRO}}=4,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90a3ca6e2688839c885bd4e64e6aee6c2f2}{CINQUE}}=5,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90a5a346ff05eab8e3d9f1a2684e939294a}{SEI}}=6,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90ae4d307e6adc535f1bad3626e5639c790}{SETTE}}=7\ ,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90a03605500b0c55f3d95874e8edfcf4e30}{J}}=8,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90aa53ab217f1572250a530c8c2b3c820cf}{Q}}=9,\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90a660a38111995acbeb2820648e82f0d8c}{K}}=10}
+\DoxyCodeLine{00017\ \}\ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90}{Valori}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCarta}{Carta}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_a67b301b2eac68be01503399ca1e1aa09}{Seme}}\ \mbox{\hyperlink{structCarta_a835376e4dcf6e7e352f39ce2da699c8d}{seme}};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{CardGame_8h_aec671640a644f782d2962566c40e1a90}{Valori}}\ \mbox{\hyperlink{structCarta_a9c803a5535b455a10adbcb3c9987b363}{valore}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structCarta_a7f6a437e8bdfca97411c6aacf5f6e27d}{valida}};\ \ \textcolor{comment}{//\ nuovo\ campo}}
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{structCarta}{Carta}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMazzo}{Mazzo}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structCarta}{Carta}}\ \mbox{\hyperlink{structMazzo_a1c995b5eb19e55e0b39684d8ddd0efd0}{carte}}[40];}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMazzo_aea2e4b2a5b48dfe34cf6c65a29ebc02b}{num\_carte}};}
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{structMazzo}{Mazzo}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGiocatore}{Giocatore}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_a39523baad83f3e8ba3853f7aa76e0685}{numeroGiocatore}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGiocatore_a6c13ff90fa69d7fb02c7aee6e72d6320}{vite}};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{structCarta}{Carta}}\ \mbox{\hyperlink{structGiocatore_a91ec98c17837a4363f942212193f9774}{mano}}[2];}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGiocatore}{Giocatore}}\ *\mbox{\hyperlink{structGiocatore_ac37c9d6787a4a98b66913a4eb110c50c}{next}};}
+\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{structGiocatore}{Giocatore}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a8789adc06cd882805152ca7f710886e1}{stampaMazzo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMazzo}{Mazzo}}\ *mazzo);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_ab3008c5e48c2655b6ba9f41a476909d9}{stampaCarta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCarta}{Carta}}\ *carta,\ \textcolor{keywordtype}{bool}\ is\_coperta);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a9f2b1b2693cfa5bc44198f011da23d65}{inizializzaMazzo}}(\mbox{\hyperlink{structMazzo}{Mazzo}}\ *mazzo);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a7dfd477e53baf6bffb0127ea1512a2c2}{shuffle}}(\mbox{\hyperlink{structMazzo}{Mazzo}}\ *mazzo,\ \textcolor{keywordtype}{size\_t}\ mazzo\_size);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a2d5fd547dcac5a02f130628b643755c0}{swap}}(\mbox{\hyperlink{structCarta}{Carta}}\ *a,\ \mbox{\hyperlink{structCarta}{Carta}}\ *b);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a4a87c68c6bd77918b66560b07852a154}{giocatori}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}\ **head,\ \textcolor{keywordtype}{int}\ num);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a6ca3bda2b77a027fe14196901334316f}{distribuisci}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}\ *head,\ \mbox{\hyperlink{structMazzo}{Mazzo}}\ *mazzo);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a5d4f269aedd2ea3dcca39e1e8bbc7f9b}{effetti}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}\ *giocatore,\ \mbox{\hyperlink{structGiocatore}{Giocatore}}\ *head,\ \textcolor{keywordtype}{int}\ indiceCarta);}
+\DoxyCodeLine{00045\ \mbox{\hyperlink{structGiocatore}{Giocatore}}*\ \mbox{\hyperlink{CardGame_8h_aa7b57440e736347d150c05c8104a02f8}{startPlayer}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}\ *player,\ \textcolor{keywordtype}{int}\ n\_player);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a643a349bedf402a7ae1a039055d45756}{svoglimentoFase}}\ (\mbox{\hyperlink{structGiocatore}{Giocatore}}*\ giocatore,\ \mbox{\hyperlink{structGiocatore}{Giocatore}}\ *head,\ \textcolor{keywordtype}{int}\ num\_giocatori);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{CardGame_8h_a7f0d9bc7e90376b7c54eaafa3e9499b8}{contaGiocatoriVivi}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}*\ head);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_a26d1863016bb0c142696fa220ef629b4}{eliminaGiocatoriMorti}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}**\ head)\ ;}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_aa4f8bd025baab984f9e519e4f80a8ab8}{giocaPartita}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}**\ head,\ \mbox{\hyperlink{structMazzo}{Mazzo}}*\ mazzo,\ \textcolor{keywordtype}{int}\ num\_giocatori);}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CardGame_8h_aa5067270ccfb6d472c9dca8a64e39099}{sostituisciCarta}}(\mbox{\hyperlink{structGiocatore}{Giocatore}}*\ g,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00051\ \mbox{\hyperlink{structCarta}{Carta}}\ \mbox{\hyperlink{CardGame_8h_a3365bff4bf1c7312cf0d5908f3d020d1}{pescaCarta}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CARDGAME\_H}}
+
+\end{DoxyCode}

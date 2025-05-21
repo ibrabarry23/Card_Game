@@ -1,9 +1,6 @@
 #ifndef CARDGAME_H
 #define CARDGAME_H
 
-// #include <SDL2/SDL.h>         // Se ti servono
-// #include <SDL2/SDL_image.h>   // Se ti servono
-
 typedef enum {
     Fiori = 0,
     Cuori = 1,
@@ -19,7 +16,7 @@ typedef enum {
 typedef struct Carta {
     Seme seme;
     Valori valore;
-	bool valida;  // nuovo campo
+    bool valida;  // nuovo campo
 } Carta;
 
 typedef struct Mazzo {
@@ -40,42 +37,13 @@ void inizializzaMazzo(Mazzo *mazzo);
 void shuffle(Mazzo *mazzo, size_t mazzo_size);
 void swap(Carta *a, Carta *b);
 void giocatori(Giocatore **head, int num);
-void distribuisci(Giocatore *head, Mazzo *mazzo); 
+void distribuisci(Giocatore *head, Mazzo *mazzo);
 void effetti(Giocatore *giocatore, Giocatore *head, int indiceCarta);
 Giocatore* startPlayer(Giocatore *player, int n_player);
 void svoglimentoFase (Giocatore* giocatore, Giocatore *head, int num_giocatori);
 int contaGiocatoriVivi(Giocatore* head);
 void eliminaGiocatoriMorti(Giocatore** head) ;
-void giocaPartita(Giocatore** head, Mazzo* mazzo, int num_giocatori);
-void sostituisciCarta(Giocatore* g, int indice);
-Carta pescaCarta(void);
-#endif // CARDGAME_H
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void giocaPartita(Giocatore** head, Mazzo* mazzo);
+void ridistribuisciCarte(Giocatore* head, int num_giocatori);
+Carta pescaCarta();
+#endif//CARDGAME_H

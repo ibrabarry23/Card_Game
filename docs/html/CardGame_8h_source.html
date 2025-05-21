@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mazzo truccato:  File sorgente include/CardGame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mazzo truccato<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">CardGame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="CardGame_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CARDGAME_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CARDGAME_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// #include &lt;SDL2/SDL.h&gt;         // Se ti servono</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// #include &lt;SDL2/SDL_image.h&gt;   // Se ti servono</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09">    7</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09ad36b7de10ed5d3d60c20ed595070fceb">    8</a></span>    <a class="code hl_enumvalue" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09ad36b7de10ed5d3d60c20ed595070fceb">Fiori</a> = 0,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09af9ad4c1c651d77de0dcaf1936c24973d">    9</a></span>    <a class="code hl_enumvalue" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09af9ad4c1c651d77de0dcaf1936c24973d">Cuori</a> = 1,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09a88d218f2d8e34c188a53c826a56cc17a">   10</a></span>    <a class="code hl_enumvalue" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09a88d218f2d8e34c188a53c826a56cc17a">Picche</a> = 2,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09a7aa9dae02aba636f1b38cd18699c98ac">   11</a></span>    <a class="code hl_enumvalue" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09a7aa9dae02aba636f1b38cd18699c98ac">Quadri</a> = 3,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>} <a class="code hl_enumeration" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09">Seme</a>;</div>
+</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90">   14</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a1be7a23d5c358c3943f9a8f249507fb0">   15</a></span>    <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a1be7a23d5c358c3943f9a8f249507fb0">ASSO</a> = 1,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a3ca6e2688839c885bd4e64e6aee6c2f2">   16</a></span>    <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90aae82d6ec97e5e06b79b6f0014329bec4">DUE</a>=2, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a8a740aab51bff64f17abec9154bb7bbb">TRE</a>=3, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90ad99dbc33e9a221e1ea5bbc01ff995d3c">QUATTRO</a>=4, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a3ca6e2688839c885bd4e64e6aee6c2f2">CINQUE</a>=5, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a5a346ff05eab8e3d9f1a2684e939294a">SEI</a>=6, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90ae4d307e6adc535f1bad3626e5639c790">SETTE</a>=7 , <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a03605500b0c55f3d95874e8edfcf4e30">J</a>=8, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90aa53ab217f1572250a530c8c2b3c820cf">Q</a>=9, <a class="code hl_enumvalue" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a660a38111995acbeb2820648e82f0d8c">K</a>=10</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a660a38111995acbeb2820648e82f0d8c">   17</a></span>} <a class="code hl_enumeration" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90">Valori</a>;</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structCarta.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structCarta.html">Carta</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structCarta.html#a835376e4dcf6e7e352f39ce2da699c8d">   20</a></span>    <a class="code hl_enumeration" href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09">Seme</a> <a class="code hl_variable" href="structCarta.html#a835376e4dcf6e7e352f39ce2da699c8d">seme</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structCarta.html#a9c803a5535b455a10adbcb3c9987b363">   21</a></span>    <a class="code hl_enumeration" href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90">Valori</a> <a class="code hl_variable" href="structCarta.html#a9c803a5535b455a10adbcb3c9987b363">valore</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structCarta.html#a7f6a437e8bdfca97411c6aacf5f6e27d">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structCarta.html#a7f6a437e8bdfca97411c6aacf5f6e27d">valida</a>;  <span class="comment">// nuovo campo</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="CardGame_8h.html#a43ad99c1881e49f08cf0dd00b7388d47">   23</a></span>} <a class="code hl_struct" href="structCarta.html">Carta</a>;</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structMazzo.html">   25</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structMazzo.html">Mazzo</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structMazzo.html#a1c995b5eb19e55e0b39684d8ddd0efd0">   26</a></span>    <a class="code hl_struct" href="structCarta.html">Carta</a> <a class="code hl_variable" href="structMazzo.html#a1c995b5eb19e55e0b39684d8ddd0efd0">carte</a>[40];</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structMazzo.html#aea2e4b2a5b48dfe34cf6c65a29ebc02b">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structMazzo.html#aea2e4b2a5b48dfe34cf6c65a29ebc02b">num_carte</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="CardGame_8h.html#aaebb70a2148784612c7b6f17901027ae">   28</a></span>} <a class="code hl_struct" href="structMazzo.html">Mazzo</a>;</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structGiocatore.html">   30</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structGiocatore.html">Giocatore</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structGiocatore.html#a39523baad83f3e8ba3853f7aa76e0685">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structGiocatore.html#a39523baad83f3e8ba3853f7aa76e0685">numeroGiocatore</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structGiocatore.html#a6c13ff90fa69d7fb02c7aee6e72d6320">   32</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structGiocatore.html#a6c13ff90fa69d7fb02c7aee6e72d6320">vite</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structGiocatore.html#a91ec98c17837a4363f942212193f9774">   33</a></span>    <a class="code hl_struct" href="structCarta.html">Carta</a> <a class="code hl_variable" href="structGiocatore.html#a91ec98c17837a4363f942212193f9774">mano</a>[2];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structGiocatore.html#ac37c9d6787a4a98b66913a4eb110c50c">   34</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structGiocatore.html">Giocatore</a> *<a class="code hl_variable" href="structGiocatore.html#ac37c9d6787a4a98b66913a4eb110c50c">next</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="CardGame_8h.html#ae452fa2260469b6d0d91fd76b2a0cfe1">   35</a></span>} <a class="code hl_struct" href="structGiocatore.html">Giocatore</a>;</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a8789adc06cd882805152ca7f710886e1">stampaMazzo</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structMazzo.html">Mazzo</a> *mazzo);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#ab3008c5e48c2655b6ba9f41a476909d9">stampaCarta</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structCarta.html">Carta</a> *carta, <span class="keywordtype">bool</span> is_coperta);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a9f2b1b2693cfa5bc44198f011da23d65">inizializzaMazzo</a>(<a class="code hl_struct" href="structMazzo.html">Mazzo</a> *mazzo);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a7dfd477e53baf6bffb0127ea1512a2c2">shuffle</a>(<a class="code hl_struct" href="structMazzo.html">Mazzo</a> *mazzo, <span class="keywordtype">size_t</span> mazzo_size);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a2d5fd547dcac5a02f130628b643755c0">swap</a>(<a class="code hl_struct" href="structCarta.html">Carta</a> *a, <a class="code hl_struct" href="structCarta.html">Carta</a> *b);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a4a87c68c6bd77918b66560b07852a154">giocatori</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a> **head, <span class="keywordtype">int</span> num);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a6ca3bda2b77a027fe14196901334316f">distribuisci</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a> *head, <a class="code hl_struct" href="structMazzo.html">Mazzo</a> *mazzo);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a5d4f269aedd2ea3dcca39e1e8bbc7f9b">effetti</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a> *giocatore, <a class="code hl_struct" href="structGiocatore.html">Giocatore</a> *head, <span class="keywordtype">int</span> indiceCarta);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><a class="code hl_struct" href="structGiocatore.html">Giocatore</a>* <a class="code hl_function" href="CardGame_8h.html#aa7b57440e736347d150c05c8104a02f8">startPlayer</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a> *player, <span class="keywordtype">int</span> n_player);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a643a349bedf402a7ae1a039055d45756">svoglimentoFase</a> (<a class="code hl_struct" href="structGiocatore.html">Giocatore</a>* giocatore, <a class="code hl_struct" href="structGiocatore.html">Giocatore</a> *head, <span class="keywordtype">int</span> num_giocatori);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">int</span> <a class="code hl_function" href="CardGame_8h.html#a7f0d9bc7e90376b7c54eaafa3e9499b8">contaGiocatoriVivi</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a>* head);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#a26d1863016bb0c142696fa220ef629b4">eliminaGiocatoriMorti</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a>** head) ;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#aa4f8bd025baab984f9e519e4f80a8ab8">giocaPartita</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a>** head, <a class="code hl_struct" href="structMazzo.html">Mazzo</a>* mazzo, <span class="keywordtype">int</span> num_giocatori);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="CardGame_8h.html#aa5067270ccfb6d472c9dca8a64e39099">   50</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="CardGame_8h.html#aa5067270ccfb6d472c9dca8a64e39099">sostituisciCarta</a>(<a class="code hl_struct" href="structGiocatore.html">Giocatore</a>* g, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_struct" href="structCarta.html">Carta</a> <a class="code hl_function" href="CardGame_8h.html#a3365bff4bf1c7312cf0d5908f3d020d1">pescaCarta</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">// CARDGAME_H</span></div>
+<div class="ttc" id="aCardGame_8h_html_a26d1863016bb0c142696fa220ef629b4"><div class="ttname"><a href="CardGame_8h.html#a26d1863016bb0c142696fa220ef629b4">eliminaGiocatoriMorti</a></div><div class="ttdeci">void eliminaGiocatoriMorti(Giocatore **head)</div><div class="ttdoc">Funzione per eliminare i giocatori senza vite.</div><div class="ttdef"><b>Definition</b> CardGame.c:294</div></div>
+<div class="ttc" id="aCardGame_8h_html_a2d5fd547dcac5a02f130628b643755c0"><div class="ttname"><a href="CardGame_8h.html#a2d5fd547dcac5a02f130628b643755c0">swap</a></div><div class="ttdeci">void swap(Carta *a, Carta *b)</div><div class="ttdef"><b>Definition</b> CardGame.c:80</div></div>
+<div class="ttc" id="aCardGame_8h_html_a3365bff4bf1c7312cf0d5908f3d020d1"><div class="ttname"><a href="CardGame_8h.html#a3365bff4bf1c7312cf0d5908f3d020d1">pescaCarta</a></div><div class="ttdeci">Carta pescaCarta(void)</div><div class="ttdoc">Funzione che permette di pescare una carta casuale dal mazzo.</div><div class="ttdef"><b>Definition</b> CardGame.c:321</div></div>
+<div class="ttc" id="aCardGame_8h_html_a4a87c68c6bd77918b66560b07852a154"><div class="ttname"><a href="CardGame_8h.html#a4a87c68c6bd77918b66560b07852a154">giocatori</a></div><div class="ttdeci">void giocatori(Giocatore **head, int num)</div><div class="ttdoc">Funzione per creare una lista che collega i giocatori.</div><div class="ttdef"><b>Definition</b> CardGame.c:125</div></div>
+<div class="ttc" id="aCardGame_8h_html_a5d4f269aedd2ea3dcca39e1e8bbc7f9b"><div class="ttname"><a href="CardGame_8h.html#a5d4f269aedd2ea3dcca39e1e8bbc7f9b">effetti</a></div><div class="ttdeci">void effetti(Giocatore *giocatore, Giocatore *head, int indiceCarta)</div><div class="ttdef"><b>Definition</b> CardGame.c:194</div></div>
+<div class="ttc" id="aCardGame_8h_html_a643a349bedf402a7ae1a039055d45756"><div class="ttname"><a href="CardGame_8h.html#a643a349bedf402a7ae1a039055d45756">svoglimentoFase</a></div><div class="ttdeci">void svoglimentoFase(Giocatore *giocatore, Giocatore *head, int num_giocatori)</div><div class="ttdoc">Funzione che gestiche la fase di gioco di ogni giocatore.</div><div class="ttdef"><b>Definition</b> CardGame.c:366</div></div>
+<div class="ttc" id="aCardGame_8h_html_a67b301b2eac68be01503399ca1e1aa09"><div class="ttname"><a href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09">Seme</a></div><div class="ttdeci">Seme</div><div class="ttdef"><b>Definition</b> CardGame.h:7</div></div>
+<div class="ttc" id="aCardGame_8h_html_a67b301b2eac68be01503399ca1e1aa09a7aa9dae02aba636f1b38cd18699c98ac"><div class="ttname"><a href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09a7aa9dae02aba636f1b38cd18699c98ac">Quadri</a></div><div class="ttdeci">@ Quadri</div><div class="ttdef"><b>Definition</b> CardGame.h:11</div></div>
+<div class="ttc" id="aCardGame_8h_html_a67b301b2eac68be01503399ca1e1aa09a88d218f2d8e34c188a53c826a56cc17a"><div class="ttname"><a href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09a88d218f2d8e34c188a53c826a56cc17a">Picche</a></div><div class="ttdeci">@ Picche</div><div class="ttdef"><b>Definition</b> CardGame.h:10</div></div>
+<div class="ttc" id="aCardGame_8h_html_a67b301b2eac68be01503399ca1e1aa09ad36b7de10ed5d3d60c20ed595070fceb"><div class="ttname"><a href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09ad36b7de10ed5d3d60c20ed595070fceb">Fiori</a></div><div class="ttdeci">@ Fiori</div><div class="ttdef"><b>Definition</b> CardGame.h:8</div></div>
+<div class="ttc" id="aCardGame_8h_html_a67b301b2eac68be01503399ca1e1aa09af9ad4c1c651d77de0dcaf1936c24973d"><div class="ttname"><a href="CardGame_8h.html#a67b301b2eac68be01503399ca1e1aa09af9ad4c1c651d77de0dcaf1936c24973d">Cuori</a></div><div class="ttdeci">@ Cuori</div><div class="ttdef"><b>Definition</b> CardGame.h:9</div></div>
+<div class="ttc" id="aCardGame_8h_html_a6ca3bda2b77a027fe14196901334316f"><div class="ttname"><a href="CardGame_8h.html#a6ca3bda2b77a027fe14196901334316f">distribuisci</a></div><div class="ttdeci">void distribuisci(Giocatore *head, Mazzo *mazzo)</div><div class="ttdoc">Funzione per distribuire le carte ai giocatori.</div><div class="ttdef"><b>Definition</b> CardGame.c:155</div></div>
+<div class="ttc" id="aCardGame_8h_html_a7dfd477e53baf6bffb0127ea1512a2c2"><div class="ttname"><a href="CardGame_8h.html#a7dfd477e53baf6bffb0127ea1512a2c2">shuffle</a></div><div class="ttdeci">void shuffle(Mazzo *mazzo, size_t mazzo_size)</div><div class="ttdef"><b>Definition</b> CardGame.c:91</div></div>
+<div class="ttc" id="aCardGame_8h_html_a7f0d9bc7e90376b7c54eaafa3e9499b8"><div class="ttname"><a href="CardGame_8h.html#a7f0d9bc7e90376b7c54eaafa3e9499b8">contaGiocatoriVivi</a></div><div class="ttdeci">int contaGiocatoriVivi(Giocatore *head)</div><div class="ttdoc">Funzione asiliaria per contare i giocatori vivi.</div><div class="ttdef"><b>Definition</b> CardGame.c:281</div></div>
+<div class="ttc" id="aCardGame_8h_html_a8789adc06cd882805152ca7f710886e1"><div class="ttname"><a href="CardGame_8h.html#a8789adc06cd882805152ca7f710886e1">stampaMazzo</a></div><div class="ttdeci">void stampaMazzo(const Mazzo *mazzo)</div><div class="ttdef"><b>Definition</b> CardGame.c:62</div></div>
+<div class="ttc" id="aCardGame_8h_html_a9f2b1b2693cfa5bc44198f011da23d65"><div class="ttname"><a href="CardGame_8h.html#a9f2b1b2693cfa5bc44198f011da23d65">inizializzaMazzo</a></div><div class="ttdeci">void inizializzaMazzo(Mazzo *mazzo)</div><div class="ttdoc">Funzione che inizializza il mazzo con tutti i semi e valori possibili.</div><div class="ttdef"><b>Definition</b> CardGame.c:11</div></div>
+<div class="ttc" id="aCardGame_8h_html_aa4f8bd025baab984f9e519e4f80a8ab8"><div class="ttname"><a href="CardGame_8h.html#aa4f8bd025baab984f9e519e4f80a8ab8">giocaPartita</a></div><div class="ttdeci">void giocaPartita(Giocatore **head, Mazzo *mazzo, int num_giocatori)</div><div class="ttdoc">Funzione che gestisce lo svolgimento della partita.</div><div class="ttdef"><b>Definition</b> CardGame.c:335</div></div>
+<div class="ttc" id="aCardGame_8h_html_aa5067270ccfb6d472c9dca8a64e39099"><div class="ttname"><a href="CardGame_8h.html#aa5067270ccfb6d472c9dca8a64e39099">sostituisciCarta</a></div><div class="ttdeci">void sostituisciCarta(Giocatore *g, int indice)</div></div>
+<div class="ttc" id="aCardGame_8h_html_aa7b57440e736347d150c05c8104a02f8"><div class="ttname"><a href="CardGame_8h.html#aa7b57440e736347d150c05c8104a02f8">startPlayer</a></div><div class="ttdeci">Giocatore * startPlayer(Giocatore *player, int n_player)</div><div class="ttdef"><b>Definition</b> CardGame.c:109</div></div>
+<div class="ttc" id="aCardGame_8h_html_ab3008c5e48c2655b6ba9f41a476909d9"><div class="ttname"><a href="CardGame_8h.html#ab3008c5e48c2655b6ba9f41a476909d9">stampaCarta</a></div><div class="ttdeci">void stampaCarta(const Carta *carta, bool is_coperta)</div><div class="ttdoc">Funzione per stampare le carte.</div><div class="ttdef"><b>Definition</b> CardGame.c:34</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90">Valori</a></div><div class="ttdeci">Valori</div><div class="ttdef"><b>Definition</b> CardGame.h:14</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90a03605500b0c55f3d95874e8edfcf4e30"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a03605500b0c55f3d95874e8edfcf4e30">J</a></div><div class="ttdeci">@ J</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90a1be7a23d5c358c3943f9a8f249507fb0"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a1be7a23d5c358c3943f9a8f249507fb0">ASSO</a></div><div class="ttdeci">@ ASSO</div><div class="ttdef"><b>Definition</b> CardGame.h:15</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90a3ca6e2688839c885bd4e64e6aee6c2f2"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a3ca6e2688839c885bd4e64e6aee6c2f2">CINQUE</a></div><div class="ttdeci">@ CINQUE</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90a5a346ff05eab8e3d9f1a2684e939294a"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a5a346ff05eab8e3d9f1a2684e939294a">SEI</a></div><div class="ttdeci">@ SEI</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90a660a38111995acbeb2820648e82f0d8c"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a660a38111995acbeb2820648e82f0d8c">K</a></div><div class="ttdeci">@ K</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90a8a740aab51bff64f17abec9154bb7bbb"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90a8a740aab51bff64f17abec9154bb7bbb">TRE</a></div><div class="ttdeci">@ TRE</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90aa53ab217f1572250a530c8c2b3c820cf"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90aa53ab217f1572250a530c8c2b3c820cf">Q</a></div><div class="ttdeci">@ Q</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90aae82d6ec97e5e06b79b6f0014329bec4"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90aae82d6ec97e5e06b79b6f0014329bec4">DUE</a></div><div class="ttdeci">@ DUE</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90ad99dbc33e9a221e1ea5bbc01ff995d3c"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90ad99dbc33e9a221e1ea5bbc01ff995d3c">QUATTRO</a></div><div class="ttdeci">@ QUATTRO</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="aCardGame_8h_html_aec671640a644f782d2962566c40e1a90ae4d307e6adc535f1bad3626e5639c790"><div class="ttname"><a href="CardGame_8h.html#aec671640a644f782d2962566c40e1a90ae4d307e6adc535f1bad3626e5639c790">SETTE</a></div><div class="ttdeci">@ SETTE</div><div class="ttdef"><b>Definition</b> CardGame.h:16</div></div>
+<div class="ttc" id="astructCarta_html"><div class="ttname"><a href="structCarta.html">Carta</a></div><div class="ttdef"><b>Definition</b> CardGame.h:19</div></div>
+<div class="ttc" id="astructCarta_html_a7f6a437e8bdfca97411c6aacf5f6e27d"><div class="ttname"><a href="structCarta.html#a7f6a437e8bdfca97411c6aacf5f6e27d">Carta::valida</a></div><div class="ttdeci">bool valida</div><div class="ttdef"><b>Definition</b> CardGame.h:22</div></div>
+<div class="ttc" id="astructCarta_html_a835376e4dcf6e7e352f39ce2da699c8d"><div class="ttname"><a href="structCarta.html#a835376e4dcf6e7e352f39ce2da699c8d">Carta::seme</a></div><div class="ttdeci">Seme seme</div><div class="ttdef"><b>Definition</b> CardGame.h:20</div></div>
+<div class="ttc" id="astructCarta_html_a9c803a5535b455a10adbcb3c9987b363"><div class="ttname"><a href="structCarta.html#a9c803a5535b455a10adbcb3c9987b363">Carta::valore</a></div><div class="ttdeci">Valori valore</div><div class="ttdef"><b>Definition</b> CardGame.h:21</div></div>
+<div class="ttc" id="astructGiocatore_html"><div class="ttname"><a href="structGiocatore.html">Giocatore</a></div><div class="ttdef"><b>Definition</b> CardGame.h:30</div></div>
+<div class="ttc" id="astructGiocatore_html_a39523baad83f3e8ba3853f7aa76e0685"><div class="ttname"><a href="structGiocatore.html#a39523baad83f3e8ba3853f7aa76e0685">Giocatore::numeroGiocatore</a></div><div class="ttdeci">int numeroGiocatore</div><div class="ttdef"><b>Definition</b> CardGame.h:31</div></div>
+<div class="ttc" id="astructGiocatore_html_a6c13ff90fa69d7fb02c7aee6e72d6320"><div class="ttname"><a href="structGiocatore.html#a6c13ff90fa69d7fb02c7aee6e72d6320">Giocatore::vite</a></div><div class="ttdeci">int vite</div><div class="ttdef"><b>Definition</b> CardGame.h:32</div></div>
+<div class="ttc" id="astructGiocatore_html_a91ec98c17837a4363f942212193f9774"><div class="ttname"><a href="structGiocatore.html#a91ec98c17837a4363f942212193f9774">Giocatore::mano</a></div><div class="ttdeci">Carta mano[2]</div><div class="ttdef"><b>Definition</b> CardGame.h:33</div></div>
+<div class="ttc" id="astructGiocatore_html_ac37c9d6787a4a98b66913a4eb110c50c"><div class="ttname"><a href="structGiocatore.html#ac37c9d6787a4a98b66913a4eb110c50c">Giocatore::next</a></div><div class="ttdeci">struct Giocatore * next</div><div class="ttdef"><b>Definition</b> CardGame.h:34</div></div>
+<div class="ttc" id="astructMazzo_html"><div class="ttname"><a href="structMazzo.html">Mazzo</a></div><div class="ttdef"><b>Definition</b> CardGame.h:25</div></div>
+<div class="ttc" id="astructMazzo_html_a1c995b5eb19e55e0b39684d8ddd0efd0"><div class="ttname"><a href="structMazzo.html#a1c995b5eb19e55e0b39684d8ddd0efd0">Mazzo::carte</a></div><div class="ttdeci">Carta carte[40]</div><div class="ttdef"><b>Definition</b> CardGame.h:26</div></div>
+<div class="ttc" id="astructMazzo_html_aea2e4b2a5b48dfe34cf6c65a29ebc02b"><div class="ttname"><a href="structMazzo.html#aea2e4b2a5b48dfe34cf6c65a29ebc02b">Mazzo::num_carte</a></div><div class="ttdeci">int num_carte</div><div class="ttdef"><b>Definition</b> CardGame.h:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato da&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

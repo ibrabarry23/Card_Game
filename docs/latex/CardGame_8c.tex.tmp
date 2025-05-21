@@ -1,0 +1,275 @@
+\doxysection{Riferimenti per il file src/\+Card\+Game.c}
+\hypertarget{CardGame_8c}{}\label{CardGame_8c}\index{src/CardGame.c@{src/CardGame.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$Card\+Game.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Grafo delle dipendenze di inclusione per Card\+Game.\+c\+:
+% FIG 0
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{CardGame_8c_a9f2b1b2693cfa5bc44198f011da23d65}{inizializza\+Mazzo}} (\mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}mazzo)
+\begin{DoxyCompactList}\small\item\em Funzione che inizializza il mazzo con tutti i semi e valori possibili. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_a397c76c5ced06176eb16b28c1ce6d2ca}{stampa\+Carta}} (const \mbox{\hyperlink{structCarta}{Carta}} \texorpdfstring{$\ast$}{*}carta, bool coperta)
+\begin{DoxyCompactList}\small\item\em Funzione per stampare le carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_a8789adc06cd882805152ca7f710886e1}{stampa\+Mazzo}} (const \mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}mazzo)
+\item 
+void \mbox{\hyperlink{CardGame_8c_a2d5fd547dcac5a02f130628b643755c0}{swap}} (\mbox{\hyperlink{structCarta}{Carta}} \texorpdfstring{$\ast$}{*}a, \mbox{\hyperlink{structCarta}{Carta}} \texorpdfstring{$\ast$}{*}b)
+\item 
+void \mbox{\hyperlink{CardGame_8c_a7dfd477e53baf6bffb0127ea1512a2c2}{shuffle}} (\mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}mazzo, size\+\_\+t mazzo\+\_\+size)
+\item 
+\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{CardGame_8c_aa7b57440e736347d150c05c8104a02f8}{start\+Player}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}player, int n\+\_\+player)
+\item 
+void \mbox{\hyperlink{CardGame_8c_a4a87c68c6bd77918b66560b07852a154}{giocatori}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, int num)
+\begin{DoxyCompactList}\small\item\em Funzione per creare una lista che collega i giocatori. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_a6ca3bda2b77a027fe14196901334316f}{distribuisci}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}mazzo)
+\begin{DoxyCompactList}\small\item\em Funzione per distribuire le carte ai giocatori. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_a5d4f269aedd2ea3dcca39e1e8bbc7f9b}{effetti}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore, \mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}head, int indice\+Carta)
+\item 
+int \mbox{\hyperlink{CardGame_8c_a7f0d9bc7e90376b7c54eaafa3e9499b8}{conta\+Giocatori\+Vivi}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Funzione asiliaria per contare i giocatori vivi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_a26d1863016bb0c142696fa220ef629b4}{elimina\+Giocatori\+Morti}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Funzione per eliminare i giocatori senza vite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCarta}{Carta}} \mbox{\hyperlink{CardGame_8c_a3365bff4bf1c7312cf0d5908f3d020d1}{pesca\+Carta}} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che permette di pescare una carta casuale dal mazzo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_aa4f8bd025baab984f9e519e4f80a8ab8}{gioca\+Partita}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}mazzo, int num\+\_\+giocatori)
+\begin{DoxyCompactList}\small\item\em Funzione che gestisce lo svolgimento della partita. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CardGame_8c_a1c9906698d28b3e16874a4b84cf58494}{svoglimento\+Fase}} (\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}head, int num\+\_\+giocatori)
+\begin{DoxyCompactList}\small\item\em Funzione che gestiche la fase di gioco di ogni giocatore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variabili}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{CardGame_8c_a6592878af3e08cf4343463a526e306f3}{campo\+Vita}} =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{CardGame_8c_a7f0d9bc7e90376b7c54eaafa3e9499b8}\label{CardGame_8c_a7f0d9bc7e90376b7c54eaafa3e9499b8} 
+\index{CardGame.c@{CardGame.c}!contaGiocatoriVivi@{contaGiocatoriVivi}}
+\index{contaGiocatoriVivi@{contaGiocatoriVivi}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{contaGiocatoriVivi()}{contaGiocatoriVivi()}}
+{\footnotesize\ttfamily int conta\+Giocatori\+Vivi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{head }\end{DoxyParamCaption})}
+
+
+
+Funzione asiliaria per contare i giocatori vivi. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em head} & \+: testa della lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+numero di giocatori vivi 
+\end{DoxyReturn}
+\Hypertarget{CardGame_8c_a6ca3bda2b77a027fe14196901334316f}\label{CardGame_8c_a6ca3bda2b77a027fe14196901334316f} 
+\index{CardGame.c@{CardGame.c}!distribuisci@{distribuisci}}
+\index{distribuisci@{distribuisci}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{distribuisci()}{distribuisci()}}
+{\footnotesize\ttfamily void distribuisci (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{head,  }\item[{\mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}}]{mazzo }\end{DoxyParamCaption})}
+
+
+
+Funzione per distribuire le carte ai giocatori. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em head} & \+: testa della lista \\
+\hline
+{\em mazzo} & \+: mazzo dal quale si distribuiscono le carte \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a5d4f269aedd2ea3dcca39e1e8bbc7f9b}\label{CardGame_8c_a5d4f269aedd2ea3dcca39e1e8bbc7f9b} 
+\index{CardGame.c@{CardGame.c}!effetti@{effetti}}
+\index{effetti@{effetti}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{effetti()}{effetti()}}
+{\footnotesize\ttfamily void effetti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{giocatore,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{head,  }\item[{int}]{indice\+Carta }\end{DoxyParamCaption})}
+
+@bief Funzione per usare gli effetti delle carte dei giocatori 
+\begin{DoxyParams}{Parametri}
+{\em giocatore} & \+: \doxylink{structGiocatore}{Giocatore} che ha giocato la carta \\
+\hline
+{\em head} & \+: testa della lista giocatori \\
+\hline
+{\em indice\+Carta} & \+: indica se la carta è scoperta (1) o coperta (0) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a26d1863016bb0c142696fa220ef629b4}\label{CardGame_8c_a26d1863016bb0c142696fa220ef629b4} 
+\index{CardGame.c@{CardGame.c}!eliminaGiocatoriMorti@{eliminaGiocatoriMorti}}
+\index{eliminaGiocatoriMorti@{eliminaGiocatoriMorti}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{eliminaGiocatoriMorti()}{eliminaGiocatoriMorti()}}
+{\footnotesize\ttfamily void elimina\+Giocatori\+Morti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head }\end{DoxyParamCaption})}
+
+
+
+Funzione per eliminare i giocatori senza vite. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em head} & \+: testa della lista \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_aa4f8bd025baab984f9e519e4f80a8ab8}\label{CardGame_8c_aa4f8bd025baab984f9e519e4f80a8ab8} 
+\index{CardGame.c@{CardGame.c}!giocaPartita@{giocaPartita}}
+\index{giocaPartita@{giocaPartita}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{giocaPartita()}{giocaPartita()}}
+{\footnotesize\ttfamily void gioca\+Partita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head,  }\item[{\mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}}]{mazzo,  }\item[{int}]{num\+\_\+giocatori }\end{DoxyParamCaption})}
+
+
+
+Funzione che gestisce lo svolgimento della partita. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em head} & \+: testa della lista \\
+\hline
+{\em mazzo} & \+: mazzo di carte \\
+\hline
+{\em num\+\_\+giocatori} & \+: numero di giocatori totali \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a4a87c68c6bd77918b66560b07852a154}\label{CardGame_8c_a4a87c68c6bd77918b66560b07852a154} 
+\index{CardGame.c@{CardGame.c}!giocatori@{giocatori}}
+\index{giocatori@{giocatori}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{giocatori()}{giocatori()}}
+{\footnotesize\ttfamily void giocatori (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Funzione per creare una lista che collega i giocatori. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em head} & \+: testa della lista \\
+\hline
+{\em num} & \+: numero di giocatori \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a9f2b1b2693cfa5bc44198f011da23d65}\label{CardGame_8c_a9f2b1b2693cfa5bc44198f011da23d65} 
+\index{CardGame.c@{CardGame.c}!inizializzaMazzo@{inizializzaMazzo}}
+\index{inizializzaMazzo@{inizializzaMazzo}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{inizializzaMazzo()}{inizializzaMazzo()}}
+{\footnotesize\ttfamily void inizializza\+Mazzo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}}]{mazzo }\end{DoxyParamCaption})}
+
+
+
+Funzione che inizializza il mazzo con tutti i semi e valori possibili. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em mazzo} & \+: mazzo di carte da inizializzare \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a3365bff4bf1c7312cf0d5908f3d020d1}\label{CardGame_8c_a3365bff4bf1c7312cf0d5908f3d020d1} 
+\index{CardGame.c@{CardGame.c}!pescaCarta@{pescaCarta}}
+\index{pescaCarta@{pescaCarta}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{pescaCarta()}{pescaCarta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCarta}{Carta}} pesca\+Carta (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Funzione che permette di pescare una carta casuale dal mazzo. 
+
+\begin{DoxyReturn}{Restituisce}
+carta generata casualmente 
+\end{DoxyReturn}
+\Hypertarget{CardGame_8c_a7dfd477e53baf6bffb0127ea1512a2c2}\label{CardGame_8c_a7dfd477e53baf6bffb0127ea1512a2c2} 
+\index{CardGame.c@{CardGame.c}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{shuffle()}{shuffle()}}
+{\footnotesize\ttfamily void shuffle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}}]{mazzo,  }\item[{size\+\_\+t}]{mazzo\+\_\+size }\end{DoxyParamCaption})}
+
+@bried Funzione per mescolare il mazzo 
+\begin{DoxyParams}{Parametri}
+{\em mazzo} & \+: mazzo da mescolare \\
+\hline
+{\em mazzo\+\_\+size} & \+: numero di carte nel mazzo \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a397c76c5ced06176eb16b28c1ce6d2ca}\label{CardGame_8c_a397c76c5ced06176eb16b28c1ce6d2ca} 
+\index{CardGame.c@{CardGame.c}!stampaCarta@{stampaCarta}}
+\index{stampaCarta@{stampaCarta}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{stampaCarta()}{stampaCarta()}}
+{\footnotesize\ttfamily void stampa\+Carta (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCarta}{Carta}} \texorpdfstring{$\ast$}{*}}]{carta,  }\item[{bool}]{coperta }\end{DoxyParamCaption})}
+
+
+
+Funzione per stampare le carte. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em carta} & \+: carta da stampare \\
+\hline
+{\em coperta} & \+: indica se la carta deve essere stampata \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a8789adc06cd882805152ca7f710886e1}\label{CardGame_8c_a8789adc06cd882805152ca7f710886e1} 
+\index{CardGame.c@{CardGame.c}!stampaMazzo@{stampaMazzo}}
+\index{stampaMazzo@{stampaMazzo}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{stampaMazzo()}{stampaMazzo()}}
+{\footnotesize\ttfamily void stampa\+Mazzo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMazzo}{Mazzo}} \texorpdfstring{$\ast$}{*}}]{mazzo }\end{DoxyParamCaption})}
+
+@bried Funzione di debug per visualizzare le carte nel mazzo 
+\begin{DoxyParams}{Parametri}
+{\em mazzo} & \+: mazzo da stampare \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_aa7b57440e736347d150c05c8104a02f8}\label{CardGame_8c_aa7b57440e736347d150c05c8104a02f8} 
+\index{CardGame.c@{CardGame.c}!startPlayer@{startPlayer}}
+\index{startPlayer@{startPlayer}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{startPlayer()}{startPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*} start\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{int}]{n\+\_\+player }\end{DoxyParamCaption})}
+
+@bried Funzione per decidere il giorcatore iniziale casualmente 
+\begin{DoxyParams}{Parametri}
+{\em player} & \+: testa della lista giocatori \\
+\hline
+{\em n\+\_\+player} & \+: numero di giocatori totali \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+giocatore iniziale 
+\end{DoxyReturn}
+\Hypertarget{CardGame_8c_a1c9906698d28b3e16874a4b84cf58494}\label{CardGame_8c_a1c9906698d28b3e16874a4b84cf58494} 
+\index{CardGame.c@{CardGame.c}!svoglimentoFase@{svoglimentoFase}}
+\index{svoglimentoFase@{svoglimentoFase}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{svoglimentoFase()}{svoglimentoFase()}}
+{\footnotesize\ttfamily void svoglimento\+Fase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{structGiocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{head,  }\item[{int}]{num\+\_\+giocatori }\end{DoxyParamCaption})}
+
+
+
+Funzione che gestiche la fase di gioco di ogni giocatore. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em start} & \+: primo giocatore \\
+\hline
+{\em head} & \+: testa della lista \\
+\hline
+{\em num\+\_\+giocatori} & \+: numero di giocatori totali \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CardGame_8c_a2d5fd547dcac5a02f130628b643755c0}\label{CardGame_8c_a2d5fd547dcac5a02f130628b643755c0} 
+\index{CardGame.c@{CardGame.c}!swap@{swap}}
+\index{swap@{swap}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCarta}{Carta}} \texorpdfstring{$\ast$}{*}}]{a,  }\item[{\mbox{\hyperlink{structCarta}{Carta}} \texorpdfstring{$\ast$}{*}}]{b }\end{DoxyParamCaption})}
+
+@bried Funzione ausiliaria per scambiare 2 carte 
+\begin{DoxyParams}{Parametri}
+{\em a} & \+: prima carta \\
+\hline
+{\em b} & \+: seconda carta \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentazione delle variabili}
+\Hypertarget{CardGame_8c_a6592878af3e08cf4343463a526e306f3}\label{CardGame_8c_a6592878af3e08cf4343463a526e306f3} 
+\index{CardGame.c@{CardGame.c}!campoVita@{campoVita}}
+\index{campoVita@{campoVita}!CardGame.c@{CardGame.c}}
+\doxysubsubsection{\texorpdfstring{campoVita}{campoVita}}
+{\footnotesize\ttfamily int campo\+Vita =0}
+
