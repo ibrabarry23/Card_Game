@@ -16,7 +16,7 @@ typedef enum {
 typedef struct Carta {
     Seme seme;
     Valori valore;
-    bool valida;  // nuovo campo
+    bool valida; 
 } Carta;
 
 typedef struct Mazzo {
